@@ -1,4 +1,9 @@
-# ant 和 all 練習
+# any 和 all 練習
+1. any : 接受一個序列的參數，其中之一符合就回傳True。
+2. all : 接受一個序列的參數，所有資料都符合才會回傳True。
+
+
+* 練習範例： https://repl.it/@Traveler/Python-any-and-all
 ```python
 # any example.
 arr = [True, False, True]

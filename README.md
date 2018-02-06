@@ -1,6 +1,8 @@
 # python-everyday-practice
 本專案是個人用來練習Python的一些語法和簡單範例
 
+所有個人範例：https://repl.it/@Traveler
+
 練習目的：
   1. 每天練習一些小範例，並熟悉python語法。
   2. 根據書籍的練習範例，嘗試更多不同的寫法，也可以用在當前工作上的專案中。
