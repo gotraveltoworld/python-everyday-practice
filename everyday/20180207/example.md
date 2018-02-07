@@ -26,7 +26,7 @@ print('intersection', intersection)
 union = set(dict_one) | set(dict_two)
 print('union', union)
 
-# symmetric_difference(對稱差)
+# symmetric_difference(對稱差)
 symmetric_difference = set(dict_one) ^ set(dict_two)
 print('symmetric_difference', symmetric_difference)
 
