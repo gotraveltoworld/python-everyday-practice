@@ -13,9 +13,13 @@
  1. Python基本語法
  2. 常用的方法
  3. 可能會涉及到部分外部工具(暫定)
- 
+
 運行環境(Environment):
-  - Python 3.6.3
+  - Python 3.6
+
+更新說明：
+1. 固定每天會利用時間練習看過的語法和法
+2. 會新增列表紀錄更新內容
 
 參考書籍(Reference):
   - [原文] http://greenteapress.com/wp/think-python/
