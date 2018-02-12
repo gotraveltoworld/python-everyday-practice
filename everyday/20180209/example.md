@@ -1,8 +1,8 @@
-# Python dict預設值相關的方法，(setdefault & defaultdict)
+# Python dict預設值相關的方法，(setdefault & defaultdict)
 * 練習範例： https://repl.it/@Traveler/Python-Counter
 * 參考：[相關說明](http://kodango.com/understand-defaultdict-in-python)
 1. 基本上dict的格式，但是存取不存在的索引值時，會即時回傳一個值。
-2. 都是處理key值不存在時可以透過這個方式存取預設值。
+2. 都是處理key值不存在時可以透過這個方式存取預設值。
 
 ```python
 # Generate a dict
@@ -65,9 +65,9 @@ dic = defaultdict(lambda : 1.0)
 print(dic['lamda_key'])
 # 1.0
 ```
-以下是defaultdict實現的方式的一些說明：
-1. python 2.5以上支援dict中的`__missing_＿`方法，所以當存取不存在的鍵值時就會使用`__missing__`方法來回傳預設值。
-2. dict本身支援`__missing__`方法，但是其本身不存在這個方法。
+以下是defaultdict實現的方式的一些說明：
+1. python 2.5以上支援dict中的`__missing_＿`方法，所以當存取不存在的鍵值時就會使用`__missing__`方法來回傳預設值。
+2. dict本身支援`__missing__`方法，但是其本身不存在這個方法。
 ```python
 # pyhon 3.6.1
 # Print all dict method (print(dir(dict))
