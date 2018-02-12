@@ -1,25 +1,32 @@
-# 聚集不特定參數和關鍵字參數(`*arg`, `**kwargs`)
-* `*arg` 和 `**kwargs`
-* 練習範例： https://repl.it/@Traveler/Python-args-and-kwargs
+# Python named of tuple method.
+* 生成可以用名稱存取的tuple
+* 練習範例： https://repl.it/@Traveler/Python-Names-of-tuple
+* 參考：[相關說明](http://kodango.com/understand-defaultdict-in-python)
 
 ```python
-# Set some args by parameters.
-def args(*args):
-    print(args)
-args(1, 2, 3, 4, 5)
+# If you use class to print some transform format.
+class Example:
+    def __init__(self, a=0, b=0):
+        self.a = a
+        self.b = b
+    def __str__(self):
+        # string templat: http://www.cnblogs.com/vamei/archive/2013/03/12/2954938.html
+        return '(%g, %g)' % (self.a, self.b)
 
-dict_one = {'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5}
+ex = Example(1, 2)
+print(ex)
 
-def kwargs(**kwargs):
-    print(kwargs)
-kwargs(one=1, two=2, three=3, four=4, five=5)
-kwargs(**dict_one)
+# named tuple module.
+from collections import namedtuple
+# Set Eample object has a and b attribute.
+Example = namedtuple('Example', ['a', 'b'])
+print(Example)
 
-def args_and_kargs(*args, **kwargs):
-    print('arg: ', args)
-    print('kwargs: ', kwargs)
-
-args_and_kargs(1, 2, 3, 4, 5, **dict_one)
-# arg:  (1, 2, 3, 4, 5)
-# kwargs:  {'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5}
+# Use Point just like function, Point(a=1, b=2)
+ex = Example(a=1, b=2)
+print('p.a:', ex.a, 'p.b', ex.b)
+print('attribute:', ex.a, ex.b)
+print('list format:', ex[0], ex[1])
+a, b = ex
+print('a,b:', a, b)
 ```
