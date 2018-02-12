@@ -1,4 +1,4 @@
-# 聚集不特定參數和關鍵字參數(`*arg`, `**kwargs`)
+# 聚集不特定參數和關鍵字參數(`*arg`, `**kwargs`)
 * `*arg` 和 `**kwargs`
 * 練習範例： https://repl.it/@Traveler/Python-args-and-kwargs
 
