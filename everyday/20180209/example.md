@@ -49,7 +49,7 @@ print(test.get('something'))
 print(test['something'])
 
 ```
-defaultdict也可以用一般函式來產生預設值。
+defaultdict也可以用一般函式來產生預設值。
 ```python
 from collections import defaultdict
 
