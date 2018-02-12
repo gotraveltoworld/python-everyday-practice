@@ -1,4 +1,4 @@
-# Python named of tuple method.
+# Python named of tuple method.
 * 生成可以用名稱存取的tuple
 * 練習範例： https://repl.it/@Traveler/Python-Names-of-tuple
 * 參考：[相關說明](http://kodango.com/understand-defaultdict-in-python)
