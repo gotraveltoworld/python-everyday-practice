@@ -4,6 +4,7 @@
 2. __str__ for class debug.
 3. According to the book example to check time range.
 
+練習範例：https://repl.it/@Traveler/Python-Class-example-3
 ```python
 class Time():
     """Show current timestamp
