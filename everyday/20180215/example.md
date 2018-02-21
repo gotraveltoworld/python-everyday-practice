@@ -6,7 +6,7 @@
 
 練習範例：https://repl.it/@Traveler/Python-Class-example-3
 ```python
-class Time():
+class Time:
     """Show current timestamp
 
     attribute: hour, minute, second

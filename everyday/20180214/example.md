@@ -11,7 +11,7 @@
 ```python
 import copy
 
-class DemoClassSub():
+class DemoClassSub:
     """Sub Demo class."""
     a = 11
     b = 22
@@ -23,7 +23,7 @@ class DemoClassSub():
     def get_ab(self):
         return self.a, self.b
 
-class DemoClass():
+class DemoClass:
     """Demo the basic class"""
     __x = 0 # Attribute x
     __y = 0 # Attribute y

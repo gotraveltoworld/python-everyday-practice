@@ -7,7 +7,7 @@
 
 練習：https://repl.it/@Traveler/Python-Class-example
 ```python
-class DemoClass():
+class DemoClass:
     """Demo the basic class"""
     __x = 0 # Attribute x
     __y = 0 # Attribute y
