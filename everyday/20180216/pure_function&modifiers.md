@@ -1,7 +1,11 @@
 # Python class practice
 
 1. Pure function & modifiers
-2. Prototype and patch
+    - Pure function: 表示不會影響外部參數，並且會有回傳值。
+    - Modifiers: 會影響外部的參數，直接修改傳入的引數(For example: 傳入物件就是傳參考位址而非值)
+2. Prototype and patch: 製作原型後再補強。
+    - 盡可能優先採取Pure function的方式進行開發
+    - 必要時用Modifiers的方法來補足部分功能
 
 練習範例：https://repl.it/@Traveler/Python-Class-example-4
 ```python
