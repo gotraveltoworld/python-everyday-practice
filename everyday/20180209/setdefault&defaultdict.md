@@ -1,5 +1,5 @@
 # Python dict預設值相關的方法，(setdefault & defaultdict)
-* 練習範例： https://repl.it/@Traveler/Python-Counter
+* 練習範例： https://repl.it/@Traveler/Python-setdefault-and-defaultdict
 * 參考1：[相關說明1](http://kodango.com/understand-defaultdict-in-python)
 * 參考2：[相關說明2](http://code.activestate.com/recipes/523034/)
 1. 基本上dict的格式，但是存取不存在的索引值時，會即時回傳一個值。
