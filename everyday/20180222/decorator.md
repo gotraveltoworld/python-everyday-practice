@@ -5,9 +5,7 @@
     - decorator可以替換成其他函式
     - decorator在引入模組的階段就會執行(import stage)
 
-Reference:
-1. http://blog.gusibi.com/post/python-decorator/
-2.
+Reference: http://blog.gusibi.com/post/python-decorator/
 
 練習範例：https://repl.it/@Traveler/Python-decorator
 
