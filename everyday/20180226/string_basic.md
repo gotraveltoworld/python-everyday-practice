@@ -25,11 +25,11 @@ while index < len(fruit):
 
 def reversed_print_text(text):
     index = 0
-    while index > -len(fruit):
-        print(fruit[index])
+    while index > -len(text):
+        print(text[index])
         index -= 1
 
-reversed_print_text(fruit)
+reversed_print_text(text)
 
 # Concatenation
 prefixes = 'JKLMNOPQ'
