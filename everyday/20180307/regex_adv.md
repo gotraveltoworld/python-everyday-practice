@@ -1,7 +1,7 @@
 # Python string example.
 
-Basic regex function: https://repl.it/@Traveler/Python-String-practice-All
-Reference: http://zwindr.blogspot.tw/2016/01/python-regular-expression.html
+* Basic regex function: https://repl.it/@Traveler/Python-String-practice-All
+* Reference: http://zwindr.blogspot.tw/2016/01/python-regular-expression.html
 
 > Pracetice python regex function.
 
