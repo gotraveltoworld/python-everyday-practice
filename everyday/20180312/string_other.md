@@ -10,7 +10,12 @@ Study the format function.
     * __str__: Readable for normal string.
     * __repr__: Unambigous for all object.
 
-
+## main.py
+```python
+# Add print function.
+# !s, !r <= raw string.
+print('{0!s} {0!r}'.format(String()))
+```
 ## string_other.py
 ```python
 class String(object):
