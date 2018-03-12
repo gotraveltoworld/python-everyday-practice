@@ -8,7 +8,7 @@
 #     echo $date
 # done
 
-for (( i=0; i<=10; i=i+1 ))
+for (( i=0; i<=2; i=i+1 ))
 do
     now=$(date -v -${i}d '+%Y%m%d')
     if test -e everyday/$now; then
