@@ -7,8 +7,8 @@ Reference:
 Study the format function.
 1. format
 2. __str__ and __repr__ function
-    * __str__
-    * __repr__
+    * __str__: Readable for normal string.
+    * __repr__: Unambigous for all object.
 
 
 ## string_other.py
