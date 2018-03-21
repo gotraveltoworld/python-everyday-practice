@@ -5,7 +5,7 @@
     1. unicode
     2. string and unicode
 
-## string_other.py
+## unicode_test.py
 ```python
 # Show unicodedata
 import unicodedata
