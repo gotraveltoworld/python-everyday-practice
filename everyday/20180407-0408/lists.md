@@ -1,7 +1,5 @@
 # Python lists function.
 
-### Link: https://repl.it/@Traveler/Simpletextresearch
-
 ## Content:
 1. Write some list functions and features.
 2. List some of function to describe the list features.
