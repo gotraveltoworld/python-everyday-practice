@@ -67,16 +67,16 @@ def birthday_paradox(n = 23):
 ```
 9. 10-9: Count the results, 用兩種方式串階list。
 ```python
-    start = time.time()
-    list_data = []
-    for w in load_words():
-        list_data.append(w)
-    print('append time:', time.time() - start)
+start = time.time()
+list_data = []
+for w in load_words():
+    list_data.append(w)
+print('append time:', time.time() - start)
 
-    list_data = []
-    start = time.time()
-    for w in load_words():
-        list_data += [w]
-    print('[] + [] time:', time.time() - start)
+list_data = []
+start = time.time()
+for w in load_words():
+    list_data += [w]
+print('[] + [] time:', time.time() - start)
 ```
 
