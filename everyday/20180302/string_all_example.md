@@ -5,7 +5,7 @@ All string(from basic to advantage)： https://repl.it/@Traveler/Python-String-p
 
 ## basic.py
 ```python
-def simpla_case():
+def simple_case():
     # Simple case.
     fruit = 'banana'
     print(fruit[0])
@@ -69,7 +69,7 @@ def is_palindrome(word):
 
 ## main.py
 ```python
-from basic import simpla_case, traversal_str, reversed_print_text, show_concatenation, find, count
+from basic import simple_case, traversal_str, reversed_print_text, show_concatenation, find, count
 from advantage import is_palindrome
 
 # Reference:
@@ -80,7 +80,7 @@ from advantage import is_palindrome
 """
 if __name__ == '__main__':
     # basic
-    simpla_case()
+    simple_case()
 
     # is_palindrome
     print(is_palindrome('bye'))

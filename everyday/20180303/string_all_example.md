@@ -27,7 +27,7 @@ def str_split(text, symbol=','):
 ```
 ## main.py
 ```python
-from basic import simpla_case, traversal_str, reversed_print_text, show_concatenation, find, count, str_replace, str_strip, str_reversed
+from basic import simple_case, traversal_str, reversed_print_text, show_concatenation, find, count, str_replace, str_strip, str_reversed
 from advantage import is_palindrome
 # Reference:
 # 1. https://stackoverflow.com/questions/4041238/why-use-def-main
@@ -38,7 +38,7 @@ from advantage import is_palindrome
 """
 if __name__ == '__main__':
     # basic
-    simpla_case()
+    simple_case()
 
     # is_palindrome
     print(is_palindrome('bye'))
