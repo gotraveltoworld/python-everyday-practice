@@ -47,3 +47,23 @@
     # 補充訊息：可回傳錯誤訊息
     raise LookupError('value does not appear in the dictionary.')
     ```
+5. 字典(dict)和串列(list)的比較：
+    * 參照上述幾點，當賦予一個新的字典，它可以將字母產生鍵值，並且對應的出現的頻率(字頻)上。如果想要反轉(inverts)結果，也可以用一個函式來實作。
+    ```python
+    def invert_dict(dic):
+        inverse = {}
+        for key in dic:
+            val = dic[key]
+            if val not in inverse:
+                inverse[val] = [key]
+            else:
+                inverse[val].append(key)
+        return inverse
+
+    hist = histogram('abcabcdpap')
+    print(hist)
+    print(invert_dict(hist))
+    # {'a': 3, 'b': 2, 'c': 2, 'd': 1, 'p': 2}
+    # {3: ['a'], 2: ['b', 'c', 'p'], 1: ['d']}
+    ```
+    * 串列和字典都是可被改變的資料型態，因此不可作為 __鍵值__ ，因為必須要是 __可雜湊(hashable)__ ，但是可以作為值存在。
