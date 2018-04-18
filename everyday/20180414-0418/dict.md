@@ -67,3 +67,26 @@
     # {3: ['a'], 2: ['b', 'c', 'p'], 1: ['d']}
     ```
     * 串列和字典都是可被改變的資料型態，因此不可作為 __鍵值__ ，因為必須要是 __可雜湊(hashable)__ ，但是可以作為值存在。
+6. Memos(記憶先前的資料，利用空間換取計算時間), 舉例：fibonacci(費氏數列)。
+    ```python
+    # memos 負責記錄已知的資料，當裡面已經有結果時，直接回傳，不用再次計算。
+    memos = {0:0, 1:1}
+    def fibonacci(n):
+        if n in memos:
+            return memos[n]
+
+        res = fibonacci(n - 1) + fibonacci(n -2)
+        memos[n] = res
+        return res
+    ```
+    這是全域變數(global)的一種應用，基本上變數如果再函式外部建立，都屬於`__main__`的特殊資訊框所擁有，一般被當作全域變數(global)。在函式中要引用全域變數必須加上`global`述句，例如：`global flag`。
+7. Debug:
+    * 縮小輸入範圍
+        - for example: to get small data set to find error.
+    * 檢查摘要和型別
+        - print summaries(sum of a numerical list or count of a list)
+        - runtime errors
+    * 撰寫自我檢查
+        - sanity check -> to check insane.
+        - consistency check -> consistent.
+    * 格式化輸出(`import pprint`)
