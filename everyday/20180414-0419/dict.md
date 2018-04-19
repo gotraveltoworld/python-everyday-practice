@@ -1,14 +1,14 @@
 # Python lists function.
 ## Link: https://repl.it/@Traveler/dictfunctions
 ## Content:
-1. 字典(dictionary)是一種映射形式的資料結構，
+1. 字典(dictionary)是一種映射形式的資料結構：
     * dict的index幾乎可以是任何形式的型別，不同於list，必須要是正整數。
     * 一個dict含有索引構成的群集(a collections of indices)，就是keys和values。這種key和value構成的關聯稱為鍵值與值對組(key-value pair)，有時也可以稱為項目(item)。
     * `ditc`這個方法可以建立一個空的dict。
     * 顯示的符號是`{}`(squiggly brackets)，代表空的字典(empty dictionary)。指定特定的鍵與值可以用`[]`(square brackets)指派，例如：`dic['key']  = 'Hi'`。
     * dict是無序的元素組合，運用雜湊表(hashtables)的方式來降低查找元素的時間。
-    * dict可用len計算__鍵值__的數量。
-    * dict用`in`運算子，可以找出在__鍵值__中有存在的索引。如果要找值，需要使用`dict.values()`進行比對。
+    * dict可用len計算 __鍵值__ 的數量。
+    * dict用`in`運算子，可以找出在 __鍵值__ 中有存在的索引。如果要找值，需要使用`dict.values()`進行比對。
 2. 字典(dict)可以做為計數器的一個群集。
     * 利用鍵與值對應，可以計算每個每個鍵值出現的次數，例如：計算文本中所有英文字母出現的次數，就可以用26字母當作鍵值，值則是次數，就可以很好的表示各個字母出現的次數。
     * 利用鍵值的唯一性，可以根據需要創建資料結構
@@ -90,3 +90,31 @@
         - sanity check -> to check insane.
         - consistency check -> consistent.
     * 格式化輸出(`import pprint`)
+
+8. 總結：
+    * 字典(dictionary)是一種映射形式(mapping)的資料結構，主要形式是鍵值對(key-value pair)。分成兩種群集(a collections' a collection of values, a collection of indices) => 項目(item)
+    * 字典屬於無序的集合(collection)，且是可變的型別(mutable)。
+    * 顯示的符號是`{}`(squiggly brackets)，代表空的字典(empty dictionary)。指定特定的鍵與值可以用`[]`(square brackets)指派，例如：`dic['key']  = 'Hi'`。
+    * dict可用`len`計算 __鍵值__ 的數量，並非取出 __值__。
+    * dict用`in`運算子，可以找出在 __鍵值__ 中有存在的索引。如果要找值，需要使用`dict.values()`取出 __值__。
+    * 常用方法：
+        - dict.clear(): 清空字典
+        - dict.copy(): 複製字典(`shallow`)
+        - dict.items(): 取出所有 __項目__
+        - dict.keys(): 取出所有 __鍵__
+        - dict.values(): 取出所有 __值__
+        - dict.get(key, default=None): 取出特定 __鍵值__ , 預設是`None`
+        - dict.update(dict2): 將`dict2`指定到`dict1`中。
+        - dict.setdefault(key, default=None): 如果鍵值不存在字典中，將其設定為`default`
+        - dict.fromkeys(seq[, val]): 根據陣列設定對應的序列。
+            ```python
+            names = ['John', 'Mark', 'Jack']
+            dic = dict.fromkeys(names, 100)
+            print(dic)
+            ```
+        - dict.popitem(): 刪除一個元素，因為字典是無序的資料結構，所以刪除的元素並非是按照特定順序，如果有需要逐步刪除字典的內容的話，可以使用這方法。
+            ```python
+            data = {'1': 'python', '2': 'javascript'}
+            pop_obj = data.popitem()
+            print(pop_obj)
+            ```
