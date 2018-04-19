@@ -4,7 +4,7 @@
 1. 字典(dictionary)是一種映射形式的資料結構：
     * dict的index幾乎可以是任何形式的型別，不同於list，必須要是正整數。
     * 一個dict含有索引構成的群集(a collections of indices)，就是keys和values。這種key和value構成的關聯稱為鍵值與值對組(key-value pair)，有時也可以稱為項目(item)。
-    * `ditc`這個方法可以建立一個空的dict。
+    * `dict`這個方法可以建立一個空的dict。
     * 顯示的符號是`{}`(squiggly brackets)，代表空的字典(empty dictionary)。指定特定的鍵與值可以用`[]`(square brackets)指派，例如：`dic['key']  = 'Hi'`。
     * dict是無序的元素組合，運用雜湊表(hashtables)的方式來降低查找元素的時間。
     * dict可用len計算 __鍵值__ 的數量。
