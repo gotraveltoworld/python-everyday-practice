@@ -118,3 +118,20 @@
             pop_obj = data.popitem()
             print(pop_obj)
             ```
+    * `enumerate`方法也可以取出字典的資料。
+        ```python
+        seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+        list(enumerate(seasons))
+        # [(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
+        ```
+    * 也可以用list comprehension產生新的字典:
+        ```python
+        d = {'a': 1, 'b': 2, 'c': 3}
+        {k: v for k, v in d.items() if v == 1 or v == 2}
+        # {'a': 1, 'b': 2}
+        ```
+    * `lookup`和`reverse lookup`兩種查找方式的時間有很大的差異，如果需要大量反向查找，應該考慮換一個資料結構去儲存資料。
+    * `Memos`記憶方式是利用全域變數的方式記錄先前計算過的值，這種方式可用於很多狀況，當需要用空間換取時間都可採用這種方式。
+        - 全域變數的範圍在python中，是屬於`__main__`的特殊資訊框。
+        - 全域變數在應用程式過大時很難控制，因此應該避免使用，如果需要用到`Memos`的方法，可以考慮用`closure`或是`function`的變數。
+    * 除錯時應從小範圍開始，逐步增加輸出的內容。必要時檢查變數的型別和型態，進一步可撰寫自我檢查機制([__assert statement__](https://openhome.cc/Gossip/Python/Assert.html))，
