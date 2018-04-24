@@ -1,4 +1,5 @@
 # Python dict practice.
+### Link: https://repl.it/@Traveler/dictfunctions
 
 ## Practices
 1. 11-1: 讀取words.txt，儲存所有文字作為鍵值，並用`in`運算子檢查是否在字典中。
