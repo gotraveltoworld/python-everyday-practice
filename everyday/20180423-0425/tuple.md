@@ -78,3 +78,25 @@
         print(sumall(*t))
         # 20
         ```
+4. `zip`函式可以傳入兩個以上的串列或是元組，回傳一個由元組作為元素的串列，舉例：`[(1, 2), (3, 4)]`。其中每個元素是個來自不同串列或元組的元素。此函式的名稱由來是`zipper(拉鍊)`。
+    - zip: 結果會是一個`zip object`
+        ```python
+        s = 'abc'
+        a = [0, 1, 2]
+        zip(s, a)
+        # [('a', 0), ('b', 1), ('c', 2)],
+        print(zip(s, a))
+        # <zip object at 0x7f4d4da1cb48>
+        for i in zip(s, a):
+            print(i)
+            # ('a', 0)
+            # ('b', 1)
+            # ('c', 2)
+        ```
+    - 簡潔創建字典的方法:
+        ```python
+        d = dict(zip('abc', range(3)))
+        print(d)
+        # {'a': 0, 'c': 2, 'b': 1}
+        ```
+    - 元組的不可變性(immutable)可以作為鍵值，舉例：假設電話號碼需要姓名和地址作為複合主鍵，就像這樣`dic[name, address] = tel_number`。
