@@ -29,12 +29,12 @@
             inverse.setdefault(val, []).append(key)
         return inverse
     ```
-3. 11-3 `memo (memoize)`化，練習阿克曼函數(Ackermann function)，試著使用memo化的版本是否能估算較大引數。由於遞迴函式增長得非常快，因此可以考慮用外部紀錄變數。
+3. 11-3 `memo (memoize)`化，練習阿克曼函數(Ackermann function)，試著使用memo化的版本是否能估算較大引數。由於遞迴函式增長得非常快，因此可以考慮用外部紀錄變數。
     * [阿克曼函數維基百科](https://zh.wikipedia.org/wiki/%E9%98%BF%E5%85%8B%E6%9B%BC%E5%87%BD%E6%95%B8)
     * [阿克曼函數資料結構](http://notepad.yehyeh.net/Content/DS/CH02/7.php)
 
     ```python
-    # Reference from http://greenteapress.com/thinkpython2/code/ackermann_memo.py
+    # Reference from http://greenteapress.com/thinkpython2/code/ackermann_memo.py
     cache = {}
     def ackermann(m, n):
         """Computer the Ackermann function A(m, n)
