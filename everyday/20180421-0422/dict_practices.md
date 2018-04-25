@@ -75,3 +75,47 @@
     def has_duplicates3(array):
         return len(set(array)) < len(array)
     ```
+5. 11-5 運用rotate(caesar_cypher.py)轉動文字來得到另一個字，如果字彙表中有符合的文字就可稱為轉動對組(rotate pairs)。
+    ## Import caesar_cypher.py and to rotate.
+    ```python
+    # Caesar cipher, https://zh.wikipedia.org/wiki/%E5%87%B1%E6%92%92%E5%AF%86%E7%A2%BC
+    """
+    1. ord: text to number.
+    2. chr: number to text.
+    """
+    def rotate_letter(letter, shift=2):
+        # Check lower or upper.
+        if letter.isupper():
+            start = ord('A')
+        elif letter.islower():
+            start = ord('a')
+        else:
+            return letter
+
+        # Reset the start point.
+        char = ord(letter) - start
+        # To shift base on (letter's:26).
+        cypher = ((char + shift) % 26) + start
+        return chr(cypher)
+
+    def cypher(plain_text, shift=2):
+        cypher_text = ''
+        for c in plain_text:
+            cypher_text += rotate_letter(c, shift)
+
+        return cypher_text
+
+    def rotate_pairs(words):
+        count = 1
+        for w in words:
+            if (cypher(w, 1) in words):
+                print(w, cypher(w, 1))
+                # Show all rotate pairs.
+                count += 1
+        return count
+    # print 61 rotate pairs
+    ```
+6. 11-6 Car-talk puzzlers [__原文:(Wordplay Anyone?)__](https://www.cartalk.com/content/wordplay-anyone)。本謎題主要是根據英文的音節(`syllable`)來判斷其差異性，所以會借用外部的語音辭典的資料，[__語音字典下載__](http://greenteapress.com/thinkpython2/code/c06d)
+    * 運用字典的性質，比對出是否有存在相同的元素
+    * 運用讀檔的方法，讀取語音辭典及文字列表
+    * 運用列表切片的方式(slice)，簡潔處理所有文字的組合
