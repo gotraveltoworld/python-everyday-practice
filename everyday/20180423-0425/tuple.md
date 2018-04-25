@@ -99,4 +99,4 @@
         print(d)
         # {'a': 0, 'c': 2, 'b': 1}
         ```
-    - 元組的不可變性(immutable)可以作為鍵值，舉例：假設電話號碼需要姓名和地址作為複合主鍵，就像這樣`dic[name, address] = tel_number`。
+    - 元組的不可變性(immutable)可以作為鍵值，舉例：假設電話號碼需要姓名和地址作為複合主鍵，就像這樣`dic[name, address] = tel_number`。
