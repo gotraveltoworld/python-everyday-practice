@@ -12,7 +12,7 @@ All string(from basic to advantage)： https://repl.it/@Traveler/Python-String-p
 # Caesar cipher, https://zh.wikipedia.org/wiki/%E5%87%B1%E6%92%92%E5%AF%86%E7%A2%BC
 """
 1. ord: text to number.
-2. chr: numer to text.
+2. chr: number to text.
 """
 def rotate_letter(letter, shift=2):
     # Check lower or upper.
