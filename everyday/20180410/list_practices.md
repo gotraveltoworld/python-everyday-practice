@@ -1,4 +1,4 @@
-# Python lists pratice.
+# Python lists practice.
 
 ## Practices
 1. 10-1: 處理nested list, 加總全部元素
