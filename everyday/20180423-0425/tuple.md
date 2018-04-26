@@ -11,19 +11,19 @@
             ```python
             t = 'a',
             type(t)
-            <class 'tuple'>
+            # <class 'tuple'>
             ```
         - 不是`tuple`
             ```python
             t = ('a')
             type(t)
-            <class 'str'>
+            # <class 'str'>
             ```
         - 用關鍵字`tuple`建立
             ```python
             t = tuple()
             type(t)
-            <class 'tuple'>
+            # <class 'tuple'>
             ```
         - 引數是字串的時候
             ```python
