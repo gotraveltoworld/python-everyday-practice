@@ -103,7 +103,7 @@
 5. Compare all compound data structures(string, list, dict, tuple):
     * sequences of sequences(序列所形成的序列):
         - lists of lists
-        - iists of tuples
+        - lists of tuples
         - tuples of lists
         - tuples of tuples
     * 字串是不可變的資料結構，如果需要更改可能要改用串列。
