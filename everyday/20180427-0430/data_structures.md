@@ -27,8 +27,7 @@
         2. consists of items(keys: int or tuple=compound key, elements)
         3. Can use on each data structure with key and value.
 
-
-### Study points(chinese)
+### 學習要點(chinese)
 * 可變的資料型別(不可雜湊:unhashable):
     - 串列(list)
         1. 常用方法: `.append(), .pop(), .remove(), .reverse(), .sort(), del`
