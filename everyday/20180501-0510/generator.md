@@ -106,7 +106,30 @@ def generate_primes(stop_at=0):
             yield n
 ```
 
+```python
+# (3) Fibonacci example, use generator to build the Fibonacci.
+def fibonacci(max=1):
+    n, first, after = 0, 0, 1
+    while n < max:
+        yield after
+        first, after = after, first + after
+        n += 1
+# fibonacci(2)
+# <generator object fibonacci at 0x000001A3AEFE52B0>
+```
+> 生成器是用演算法先行確認有多少元素，並且每次迭代的過程中計算下一個元素的位置。當使用  __yield__ 來宣告函式時，這時就轉換成一個生成器函式。生成器函式的運作方式與一般函式不同，每次呼叫`next()`方法時，遇到  __yield__ 語句就會返回，再次執行會從  __yield__ 語句之後的程式執行。案例三中使用 __yield__ 和 __fibonacci__ 數列來展示生成器的功能，其實際的運作流程如下：
+> 1. 假如數列長度為5，那數列應為[1, 1, 2, 3, 5]
+> 2. max = 5 => n = 0, first = 0, after = 1, 執行到 __yield__ 回傳 1, call `next()`
+> 3. first = after(first=1), after = first + after(after = 1), n += 1 (n=1)
+> 4. first = after(first=1), after = first + after(after = 2), n += 1 (n=2)
+> 5. first = after(first=2), after = first + after(after = 3), n += 1 (n=3)
+> 6. first = after(first=3), after = first + after(after = 5), n += 1 (n=4)
+> 7. first = after(first=5), after = first + after(after = 8), n += 1 (n=5)
+>
+> 生成器的方式將遞迴(__recursion__)寫在 __yield__ 語句後方，使得所有需要大量空間儲存的數值資料的部分可以藉由生成器的概念來降低其消耗。
+
 ### Reference
 1. [wiki-python](https://en.wikipedia.org/wiki/Python_syntax_and_semantics#Generators)
 2. [Generator and yield](http://kissg.me/2016/04/09/python-generator-yield/)
 3. [Python syntax semantics](https://en.wikipedia.org/wiki/Python_syntax_and_semantics#Functional_programming)
+4. [Fibonacci](https://zh.wikipedia.org/zh-tw/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97)
