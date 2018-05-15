@@ -74,3 +74,63 @@ words in the book.
 the words in the book that are not in the word list. How many of them are typos? How many of
 them are common words that should be in the word list, and how many of them are really obscure?
 >
+#### exercise_examples
+```python
+# 13.3
+# filter all punctual and to lower
+#!/usr/bin/python3
+from collections import Counter
+from string import punctuation
+
+def load_words(path='exercise_1.txt'):
+    # Load file
+    words = []
+    with open(path) as fin:
+        for f in fin:
+            words += f.split(' ')
+    return words
+
+def filter_punctual(words):
+    clear_words = []
+    for w in words:
+        tmp_word = []
+        for char in w.strip():
+            if char in punctuation:
+                pass
+            else:
+                tmp_word.append(char)
+        clear_words.append(''.join(tmp_word).lower())
+    return clear_words
+
+def exercise_one_simple():
+    words = load_words()
+    return filter_punctual(words)
+# Output most_common words.
+def exercise_two(common=20):
+    words = load_words('book1.txt')
+    new_words = [w for w in filter_punctual(words) if w]
+    return Counter(new_words).most_common(common)
+
+def exercise_single_word(file='book1.txt'):
+    words = load_words(file)
+    return [
+        w for w in filter_punctual(words) if w
+    ]
+```
+#### main.py
+```python
+if __name__ == '__main__':
+    book1 = set(exercise_single_word('book1.txt'))
+    book2 = set(exercise_single_word('book2.txt'))
+    print(len(book1 - book2)) # 854
+    # for exercise 13.4
+    words_list = set(exercise_single_word('words.txt'))
+    print(len(book1 - words_list)) # 555
+```
+
+#### 重點
+1. `from string import punctuation`可以用來判斷標點符號。
+2. string是不可變的資料結構，每次的變動都是完全不同的一個變數。
+3. string處理可以常用的有`replace`, `translate`等等方法。
+4. string是可以進行迭代(iterable)的物件。
+5. word frequently很常用於文字分析。
