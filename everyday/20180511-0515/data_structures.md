@@ -134,3 +134,34 @@ if __name__ == '__main__':
 3. string處理可以常用的有`replace`, `translate`等等方法。
 4. string是可以進行迭代(iterable)的物件。
 5. word frequently很常用於文字分析。
+
+### 題目3
+原文： [link](http://greenteapress.com/thinkpython2/html/thinkpython2014.html)
+> __Exercise 5__
+> Write a function named choose_from_hist that takes a histogram as defined in Section 11.2 and returns a random value from the histogram, chosen with probability in proportion to frequency. For example, for this histogram:
+>
+>>> `t = ['a', 'a', 'b']`
+>>> `hist = histogram(t)`
+>>> `hist`
+`{'a': 2, 'b': 1}`
+> your function should return 'a' with probability 2/3 and 'b' with probability 1/3.
+
+#### choose_from_hist.py
+```python
+# Calculate the histogram.
+def histogram(s):
+    d = {}
+    for c in s:
+        if c not in d:
+            d[c] = 1
+        else:
+            d[c] += 1
+    return d
+# Calculate the percentage.
+def choose_from_hist(list_words):
+    total = sum([word for index, word in list_words.items()])
+    return {
+        index:'{0:.2%}'.format(float(word/total))
+            for index, word in list_words.items()
+    }
+```
