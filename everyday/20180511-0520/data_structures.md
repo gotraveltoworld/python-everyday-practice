@@ -165,3 +165,26 @@ def choose_from_hist(list_words):
             for index, word in list_words.items()
     }
 ```
+
+### author's example
+```python
+import string
+
+def process_file(filename):
+    hist = dict()
+    fp = open(filename)
+    for line in fp:
+        process_line(line, hist)
+    return hist
+
+def process_line(line, hist):
+    line = line.replace('-', ' ')
+
+    for word in line.split():
+        word = word.strip(string.punctuation + string.whitespace)
+        word = word.lower()
+        hist[word] = hist.get(word, 0) + 1
+```
+#### 重點
+1. `strip`可以用來直接移除標點符號和空白(`punctuation`and`whitespace`)
+2. string是不可變的資料結構，所以只能回傳新的string。
