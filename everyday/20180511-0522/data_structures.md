@@ -23,10 +23,10 @@ __Exercise 13.1.__ Write a program that reads a file, breaks each line into word
 punctuation from the words, and converts them to lowercase.
 Hint: The string module provides a string named whitespace, which contains space, tab, newline,
 etc., and punctuation which contains the punctuation characters.
-> Let’s see if we can make Python swear:
->   `>>> import string`
->   `>>> string.punctuation`
->   ```>>> '!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~'```
+> Let’s see if we can make Python swear:<br>
+>   `>>> import string`<br>
+>   `>>> string.punctuation`<br>
+>   ```>>> '!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~'```<br>
 > Also, you might consider using the string methods strip, replace and translate
 ---
 
@@ -140,14 +140,15 @@ if __name__ == '__main__':
 > __Exercise 5__
 > Write a function named choose_from_hist that takes a histogram as defined in Section 11.2 and returns a random value from the histogram, chosen with probability in proportion to frequency. For example, for this histogram:
 >
->>> `t = ['a', 'a', 'b']`
->>> `hist = histogram(t)`
->>> `hist`
-`{'a': 2, 'b': 1}`
+> `>>> t = ['a', 'a', 'b']`<br>
+> `>>> hist = histogram(t)`<br>
+> `>>> hist`<br>
+> `{'a': 2, 'b': 1}`<br>
 > your function should return 'a' with probability 2/3 and 'b' with probability 1/3.
 
 #### choose_from_hist.py
 ```python
+import random
 # Calculate the histogram.
 def histogram(s):
     d = {}
@@ -158,12 +159,25 @@ def histogram(s):
             d[c] += 1
     return d
 # Calculate the percentage.
-def choose_from_hist(list_words):
+def choose_from_hist_percentage(list_words):
     total = sum([word for index, word in list_words.items()])
     return {
         index:'{0:.2%}'.format(float(word/total))
             for index, word in list_words.items()
     }
+# Handle all probability
+def choose_from_hist(hists):
+    total = sum([word for index, word in hists.items()])
+    x = random.randint(0, total)
+    val = 0
+    for k, w in hists.items():
+        if k == 0:
+            val = w
+        else:
+            val += w
+
+        if x < val:
+            return k
 ```
 
 ### author's example
