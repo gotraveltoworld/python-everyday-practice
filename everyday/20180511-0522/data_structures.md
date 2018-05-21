@@ -183,17 +183,16 @@ def choose_from_hist(hists):
 ### author's example
 ```python
 import string
-
+# process_file loops through the lines of the file, passing them one at a time to process_line. The histogram hist is being used as an accumulator.
 def process_file(filename):
     hist = dict()
     fp = open(filename)
     for line in fp:
         process_line(line, hist)
     return hist
-
+# process_line uses the string method replace to replace hyphens with spaces before using split to break the line into a list of strings.
 def process_line(line, hist):
     line = line.replace('-', ' ')
-
     for word in line.split():
         word = word.strip(string.punctuation + string.whitespace)
         word = word.lower()
