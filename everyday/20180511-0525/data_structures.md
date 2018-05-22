@@ -197,7 +197,40 @@ def process_line(line, hist):
         word = word.strip(string.punctuation + string.whitespace)
         word = word.lower()
         hist[word] = hist.get(word, 0) + 1
+
+# most_common, The function will return a list of word-frequency tuples.
+def most_common(hist={}):
+    return sorted([(w, k) for w, k in hist.items()], key=lambda s: s[1], reverse=True)
+# Other sort methods: https://wiki.python.org/moin/HowTo/Sorting.
 ```
 #### 重點
 1. `strip`可以用來直接移除標點符號和空白(`punctuation`and`whitespace`)
 2. string是不可變的資料結構，所以只能回傳新的string。
+
+#### 選擇性參數
+原文：
+> We have seen built-in functions and methods that take optional arguments. It is possible to write programmer-defined functions with optional arguments, too. For example, here is a function that prints the most common words in a histogram
+>
+For example:
+```python
+# num gets the value of the argument instead.
+# In other words, the optional argument overrides the default value.
+def print_most_common(hist, num=10):
+    t = most_common(hist)
+    print('The most common words are:')
+    for freq, word in t[:num]: # <= reverse t[:num].
+        print(word, freq, sep='\t')
+    """
+    The most common words are:
+        5295	to
+        5266	the
+        4931	and
+        4339	of
+        3191	i
+        3155	a
+        2546	it
+        2483	her
+        2400	was
+        2364	she
+    """
+```
