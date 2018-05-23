@@ -234,3 +234,30 @@ def print_most_common(hist, num=10):
         2364	she
     """
 ```
+
+#### 字典相減(Dictionary subtraction)
+原文：
+> We have seen built-in functions and methods that take optional arguments. It is possible to write programmer-defined functions with optional arguments, too. For example, here is a function that prints the most common words in a histogram.<br>
+> subtract takes dictionaries d1 and d2 and returns a new dictionary that contains all the keys from d1 that are not in d2.
+Since we don’t really care about the values, we set them all to None.
+
+For example:
+```python
+"""
+    Dict1 - Dict2 = new Dict. (Only one)
+"""
+def subtract(dict1, dict2):
+    return {
+        key: None for key in dict1 if key not in dict2
+    }
+```
+分析兩字典之間的差異性，可以用文字的直方圖來分析。兩直方圖可以比對兩字典之間的差異，其實本質上是一種集合運算，其實也可以轉為集合的方式進行差集運算即可。
+```python
+"""
+    Dict1 - Dict2 = new Dict. (Only one) by set()
+"""
+def subtract_set(dict1, dict2):
+    return {
+        key: None for key in (set(dict1) - set (dict2))
+    }
+```
