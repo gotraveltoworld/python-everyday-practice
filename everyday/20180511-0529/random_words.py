@@ -36,6 +36,7 @@ def in_bisect(sorted_list, target_value):
     i = bisect(sorted_list, target_value)
     return i
 
+# Use the bisect's module to search new results.
 path = '{0}'.format(os.path.abspath('emma.txt'))
 his = histogram(load_book(path=path))
 result_hist = sorted(his.items(), key=lambda x: x[1], reverse=True)
@@ -43,4 +44,4 @@ show = random.choice(result_hist)
 index = in_bisect(sorted(result_hist), show)
 # Output the index.
 print(result_hist[index])
-# Outout the result
+# Output the result

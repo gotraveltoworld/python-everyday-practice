@@ -337,6 +337,14 @@ show = random.choice(result_hist)
 index = in_bisect(sorted(result_hist), show)
 # Output the index.
 print(result_hist[index])
-# Outout the result
-
+# Output the result
 ```
+
+#### Markov Analysis
+##### Reference:
+* [馬可夫鏈（英語：Markov chain）](https://zh.wikipedia.org/wiki/%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE)
+* [隱馬爾可夫模型（Hidden Markov Model，HMM）](https://zh.wikipedia.org/wiki/%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B)
+* [維特比演算法（英語：Viterbi algorithm）](https://zh.wikipedia.org/wiki/%E7%BB%B4%E7%89%B9%E6%AF%94%E7%AE%97%E6%B3%95)
+* [動態規劃（英語：Dynamic programming，簡稱DP）](https://zh.wikipedia.org/wiki/动态规划)
+* [背包問題（Knapsack problem）](https://zh.wikipedia.org/wiki/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98)
+
