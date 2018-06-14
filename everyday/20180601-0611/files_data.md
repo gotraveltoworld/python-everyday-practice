@@ -11,7 +11,7 @@
 # startswith, 檢查字串開頭是否符合，符合回傳True, 否則回傳False
 start_with = 'aardwolf'
 file_name = 'words_ex1'
-with  open(file_name, 'r', encoding='utf-8') as content:
+with open(file_name, 'r', encoding='utf-8') as content:
     for line in content:
         if line.startswith(start_with):
             print(line)
@@ -122,4 +122,49 @@ def walk(dir_path=''):
         else:
             walk(path)
 ```
+
+#### File walk
+用遞迴的概念寫檔案的遊走。
+1. 遞迴呼叫自己本身
+2. 利用`isfile`判斷是否要繼續往下層目錄移動
+```python
+import os
+files = []
+# listdir 列出目錄下的資料，回傳一個串列
+def walk(dir_path=''):
+    for name in os.listdir(dir_path):
+        path = os.path.join(dir_path, name)
+
+        if os.path.exists(path) and os.path.isfile(path):
+            files.append(path)
+        else:
+            walk(path)
+```
+
+#### Catch the exception
+用例外捕捉的方式抓到一些執行例外
+語法：`try...except`
+
+範例：
+```python
+file_name = 'words_ex1~' # <= Error file name
+try:
+    content = open(file_name, 'r', encoding='utf-8')
+    for line in content:
+        print(line)
+
+except IOError as io_err:
+    print(io_err) # Output the exception message
+    # [Errno 2] No such file or directory: 'words_ex1~'
+
+# You can use 'with' statement
+with open(file_name, 'r', encoding='utf-8') as content:
+    for line in content:
+        print(line)
+# [Errno 2] No such file or directory: 'words_ex1~'
+```
+
+`with`是一種content(上下文)管理器，[Reference](https://eastlakeside.gitbooks.io/interpy-zh/content/context_managers/)
+
+
 
