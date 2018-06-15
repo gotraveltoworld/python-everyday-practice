@@ -63,6 +63,7 @@ file_obj.close()
 3. file.name	get file name
 #### About file Model
 * Reference : http://www.runoob.com/python/python-files-io.html
+
 Model  | Function  |
 -------|:-------- |
 r      | Default, only read|
