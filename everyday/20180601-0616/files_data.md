@@ -164,8 +164,27 @@ with open(file_name, 'r', encoding='utf-8') as content:
         print(line)
 # [Errno 2] No such file or directory: 'words_ex1~'
 ```
-
 `with`是一種content(上下文)管理器，[Reference](https://eastlakeside.gitbooks.io/interpy-zh/content/context_managers/)
 
+#### Database
+寫入資料庫的套件(Only use on Unix)
 
+```python
+# https://docs.python.org/3/library/dbm.html
+import dbm
+db = dbm.open('dbm', 'c')
+db['one'] = 1
+print(db['one'])
+```
+##### Model:
+Value  | Meaning  |
+-------|:-------- |
+r      | Open existing database for reading only (default)|
+w      | Open existing database for reading and writing.|
+c      | Open database for reading and writing, creating it if it doesn’t exist.|
+n      | Always create a new, empty database, open for reading and writing.|
 
+特點:
+1. 可以用字典(dict)形式存取
+2. 讀取的檔案以位元組(bytes object)呈現
+3. 可以用`for ... in ...`形式存取
