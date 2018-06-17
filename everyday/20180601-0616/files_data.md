@@ -188,3 +188,46 @@ n      | Always create a new, empty database, open for reading and writing.|
 1. 可以用字典(dict)形式存取
 2. 讀取的檔案以位元組(bytes object)呈現
 3. 可以用`for ... in ...`形式存取
+
+
+### Pickling
+dbm限制鍵和值都必須是字串或是位元組，如果用其他資料結構會出現錯誤。所以可以用`pickling`轉換成適合的字串。
+
+```python
+import pickle
+
+t = [1, 2, 3]
+s = pickle.dumps(t)
+# b'\x80\x03]q\x00(K\x01K\x02K\x03e.'
+pickle.loads(s)
+# [1, 2, 3]
+```
+
+`pickling`和`un-pickling`有物件拷貝的效果(`shelve`)。
+
+### PIPE(shell: command-line interface)
+
+```python
+import os
+
+cmd = 'ls -la'
+fp = os.popen(cmd)
+res = fp.read()
+stat = fp.close()
+print(stat)
+```
+UNIX可以用`md5sum`的方式來驗證兩個檔案之間是否相同，其相同的概率非常小。
+
+```python
+import os
+
+filename = 'book'
+cmd = 'md5sum {0}'.format(filename)
+fp = os.popen(cmd)
+res = fp.read()
+print(res)
+# f0adb01ecd7c1cbb66884de181e08c53  book
+stat = fp.close()
+print(stat)
+# None
+```
