@@ -231,3 +231,35 @@ stat = fp.close()
 print(stat)
 # None
 ```
+
+### Module
+python引入模組的方法`import`練習和說明。
+[Python 的 Import 陷阱](https://medium.com/pyladies-taiwan/python-%E7%9A%84-import-%E9%99%B7%E9%98%B1-3538e74f57e3)
+
+* python import的語法會因為版本python2或是python3有所不同
+* `if __name__ == '__main__':`這段是為了當程式作為直接執行時才會執行，被匯入的話並不會有所改變。
+
+# main.py
+```python
+from import_test import file_import_test
+
+if __name__ == '__main__':
+    print(file_import_test()) # Test
+```
+# import_test.py
+```python
+def file_import_test():
+    return 'Test'
+
+if __name__ == '__main__':
+    print('ok')
+```
+
+### Debug
+除錯的方式基本上可以借助`repr()`印出空白、換行等隱藏字元。顯示的方式會用反斜線(backslash sequences)
+
+## Learning vocabulary(a part of words):
+1. persistent
+2. format operator
+3. format string
+4. format sequence
