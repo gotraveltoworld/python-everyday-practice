@@ -22,9 +22,8 @@ Python具有 [__物件導向__](https://zh.wikipedia.org/zh-tw/%E9%9D%A2%E5%90%9
 ## 基礎語法和說明
 ### Class and Instance
 類別是基本上就是一個封裝完成的抽象物件，其中包含屬性和方法。而實例就是一個具體的物件。
-
+* 宣告語法: [參考](https://stackoverflow.com/questions/4015417/python-class-inherits-object)
 FirstClass是類別名稱，一般而言是用大寫開頭，多字詞就是每個字詞首字都大寫。
-
 ### First Class
 ```python
 """Declare a one class object.
