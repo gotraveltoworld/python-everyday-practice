@@ -88,5 +88,33 @@ first_class.second_method() # use the second_method()
 print(first_class.name) # FirstClass_init
 ```
 
+### Inheritance(繼承)
+```python
+"""Declare an inheritance class.
+"""
+class ParentClass:
 
+    name = 'FirstClass'
 
+    def __init__(self, name='Parent_init'):
+        print('Show initial of inheritance....')
+        self.name = name
+        pass
+
+class ChildClass(ParentClass):
+
+    def __init__(self, name='ChildClass_init'):
+        super().__init__(name)
+        pass
+
+class_instance = ChildClass()  # Create an instance, and to initial the name.
+class_instance.name  # show the parent's name.
+'''
+Show initial of inheritance....
+ChildClass_init
+'''
+```
+重點：
+1. 用`super()`存取父類別的屬性和方法。
+2. 子類別需要傳入父類別`ChildClass(ParentClass)`。
+3. 根據實際需求設計物件之間的繼承關係，可以有效降低重複性的功能。
