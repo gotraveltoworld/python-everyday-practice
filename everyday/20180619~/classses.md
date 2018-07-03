@@ -88,6 +88,31 @@ first_class.second_method() # use the second_method()
 print(first_class.name) # FirstClass_init
 ```
 
+### Encapsulation(封裝)
+```python
+"""Use the basic function to demo the example.
+"""
+class ShowEncapsulation:
+    name = 'public_name'
+    _name = 'protest_name'
+    __name = 'private_name'
+    pass
+
+print(ShowEncapsulation().name)
+print(ShowEncapsulation()._name)
+try:
+    print(ShowEncapsulation().__name)
+except Exception as e:
+    print(e) #'ShowEncapsulation' object has no attribute '__name'
+
+# To enforce to get the function of private.
+print(ShowEncapsulation()._ShowEncapsulation__name) # private_name
+```
+重點：
+1. python沒有硬性方法遮蔽從外部存取方法，一般是使用底線的方式來區別內部和外部屬性。
+2. 目前只有使用雙底線屬性可以藉由內部更名的方式避開直接存取(仍然可以用其他方法存取)。
+    - `_ShowEncapsulation__name`(_classname_attr)
+
 ### Inheritance(繼承)
 ```python
 """Declare an inheritance class.
@@ -118,3 +143,18 @@ ChildClass_init
 1. 用`super()`存取父類別的屬性和方法。
 2. 子類別需要傳入父類別`ChildClass(ParentClass)`。
 3. 根據實際需求設計物件之間的繼承關係，可以有效降低重複性的功能。
+4. 繼承的類別可以利用覆寫(Over-write)特性來重新定義相同屬性或是方法。
+    ```python
+    class ParentClass:
+        def show(self):
+            print('Parent')
+
+    class ChildClass(ParentClass):
+        def parent_show(self):
+            super().show()
+        def show(self):
+            print('Child')
+
+    ChildClass().parent_show() # Parent
+    ChildClass().show() # Child
+    ```
