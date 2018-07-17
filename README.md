@@ -60,6 +60,7 @@
 - 2018 0601-0619：
   * 檔案目錄的一些方法
     * [file of functions](https://repl.it/@Traveler/Openfilefunctions)
-- 2018 0619~：
+- 2018 0619~(?)：
   * 複習python class
     * [Pyclass](https://repl.it/@Traveler/PyClass)
+  - 六月趕公司的專案中，近期暫停~
