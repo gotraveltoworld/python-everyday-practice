@@ -158,3 +158,26 @@ ChildClass_init
     ChildClass().parent_show() # Parent
     ChildClass().show() # Child
     ```
+### Polymorphism(多型)
+多型首先就是運算子重載(`operator overloading`))，展示`__add__`和`__str__`兩個內部方法。
+# https://openhome.cc/Gossip/Python/SpecialMethodNames.html
+```python
+class PrintObj:
+    __origin = 0
+    __after = 0
+    __str = 'Show...!'
+
+    def __init__(self, origin, after):  # Initial
+        self.__origin = origin
+        self.__after = after
+
+    def __str__(self):
+        return (self.__str)
+
+    def __add__(self, other):
+        return (self.__origin + other.__after)
+
+c1 = PrintObj(1, 9)
+c2 = PrintObj(1, 9)
+print(c1 + c2) # 10
+```
