@@ -48,3 +48,19 @@ class PrintObj:
 c1 = PrintObj(1, 9)
 c2 = PrintObj(1, 9)
 print(c1 + c2)
+
+# Polymorphism
+class Animal:
+    def talk(self):
+        pass
+
+class Cat(Animal):
+    def talk(self):
+        print('Meow')
+
+class Dog(Animal):
+    def talk(self):
+        print('Wow')
+
+Cat().talk() # Meow
+Dog().talk() # Wow

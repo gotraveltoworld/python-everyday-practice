@@ -159,9 +159,43 @@ ChildClass_init
     ChildClass().show() # Child
     ```
 ### Polymorphism(多型)
-多型首先就是運算子重載(`operator overloading`))，展示`__add__`和`__str__`兩個內部方法。
-# https://openhome.cc/Gossip/Python/SpecialMethodNames.html
+From `Object-Oriented Software Engineering: A  Use Case Driven Approach`
+> Polymorphism means that the sender of a stimulus does not need to know the receiving instance’s class.
+
+1. [Wiki](!https://en.wikipedia.org/wiki/Polymorphism_(computer_science))
+2. [多型好處](!http://blog.xuite.net/givemepassxd/blog/40974058-%E5%A4%9A%E5%9E%8B%E7%9A%84%E5%A5%BD%E8%99%95)
+3. [多型](!http://monkeycoding.com/?p=936)
+4. [一個簡單範例解釋多型(Polymorphism)
+](!http://justbm.blogspot.com/2013/03/polymorphism.html)
+
+簡單說，多型就是相同動作但是各自表述。例如：貓和狗都是動物，兩者都會叫，但是叫的聲音不同。
+
+最簡單的實現：改寫自wiki的範例
 ```python
+class Animal:
+    def talk(self):
+        pass
+
+class Cat(Animal):
+    def talk(self):
+        print('Meow')
+
+
+class Dog(Animal):
+    def talk(self):
+        print('Wow')
+
+Cat().talk() # Meow
+Dog().talk() # Wow
+```
+其實就是繼承物件後，各自實現各自的行為，以達到目的的一種設計模式。
+
+### 運算子重載(operator overloading)
+運算子重載(`operator overloading`))是多型的一種。
+
+本例子展示`__add__`和`__str__`兩個內部方法。
+```python
+# Reference: https://openhome.cc/Gossip/Python/SpecialMethodNames.html
 class PrintObj:
     __origin = 0
     __after = 0
