@@ -33,7 +33,7 @@ class FirstClass:
 ```
 ### methods of Class
 ```python
-"""Declare a one class object.
+"""Declare a class object.
     These are some functions in the class.
 """
 class FirstClass:
@@ -46,7 +46,7 @@ class FirstClass:
 ```
 ### create an instance
 ```python
-"""Declare a one class object.
+"""Declare a class object.
     These are some functions in the class.
 """
 class FirstClass:
@@ -64,7 +64,7 @@ first_class.second_method() # use the second_method()
 
 ### Initial function
 ```python
-"""Declare a one class object.
+"""Declare a class object.
     These are some functions in the class.
 """
 class FirstClass:
@@ -215,3 +215,29 @@ c1 = PrintObj(1, 9)
 c2 = PrintObj(1, 9)
 print(c1 + c2) # 10
 ```
+
+### 抽象性(Abstraction) [名詞說明](!https://medium.com/@wdyluis/%E7%94%B1-%E7%82%BA%E4%BB%80%E9%BA%BC-abstraction-%E4%B8%8D%E6%87%89%E8%A9%B2%E8%AD%AF%E7%82%BA-%E6%8A%BD%E8%B1%A1%E5%8C%96-%E8%AB%87%E6%AD%A3%E5%90%8D-a2dfb7159c47)
+抽象性(`Abstraction`) 其含意其實就是改用"抽象"型態來描述物件的特性，而不從純粹整數和浮點數及字串等資料結構來分析問題。舉例而言，就是假如有一個交通工具，具有屬性speed以及其中的方法accelerate()，因為交通工具本身是抽象物件，所以這個物件並未包含實作(只有定義有哪些屬性)。有些程式語言在Abstraction上會細分成"抽象類別(abstract class)"和"介面(interface)"。
+
+* 抽象性: __不包含實作，只有歸納出一些共同的流程步驟__
+```python
+"""Declare a class object.
+    Demo the python's abstract class.
+    Reference: https://openhome.cc/Gossip/Python/AbstractClass.html
+"""
+# Initial abs class
+from abc import ABCMeta, abstractmethod
+
+# Define all functions.
+class ABS_Class(metaclass=ABCMeta):
+    @abstractmethod
+    def alert(self, msg):
+        pass
+
+# Implement all functions.
+class Implement_Class(ABS_Class):
+    def alert(self, msg='Alert'):
+        return msg
+
+```
+透過`ABS_Class`定義基本行為，但不具體實作內容，而是由`Implement_Class`來實作其功能。
