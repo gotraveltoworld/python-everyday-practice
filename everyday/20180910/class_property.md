@@ -41,11 +41,11 @@ class Ball:
     def radius(self):
         return self.__radius
 
-    @radius.setter
+    @radius.setter # => set_radius
     def radius(self, radius):
         self.__radius = radius
 
-    @radius.deleter
+    @radius.deleter # => del_radius
     def radius(self):
         del self.__radius
 ```
