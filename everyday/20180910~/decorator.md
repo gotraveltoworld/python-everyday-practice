@@ -106,3 +106,27 @@ def fun():
 # 執行順序是從裡到外，最先呼叫最裡層的裝飾器，最後才呼叫最外層的裝飾器
 fun = a(b(c(fun)))
 ```
+### 類別包裝裝飾器
+在類別中運用裝飾器的例子。
+```python
+class Filter_Text:
+
+    def filter_one(fun):
+        def wrapper(self, text=''):
+            result_text = fun(self, text)
+            return result_text
+
+        return wrapper
+
+    def filter_two(fun):
+        def wrapper(self, text=''):
+            result_text = fun(self, text)
+            return result_text
+        return wrapper
+
+    @filter_one
+    @filter_two
+    def filtet_text(self, text=''):
+        return text
+```
+
