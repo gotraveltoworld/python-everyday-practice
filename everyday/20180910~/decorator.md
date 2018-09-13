@@ -129,4 +129,5 @@ class Filter_Text:
     def filtet_text(self, text=''):
         return text
 ```
+注意包裝部分要傳入`self`這個參數，由於是用`class`的方式呼叫，預設會傳`self`這個參數。
 
